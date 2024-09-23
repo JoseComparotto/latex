@@ -1,0 +1,361 @@
+\documentclass[12pt,letterpaper, onecolumn]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[lmargin=71pt, tmargin=1.2in]{geometry}  %For centering solution box
+\usepackage{graphicx} % Required for inserting images
+\usepackage{lastpage}
+
+% Document's meta-data
+\newcommand{\subject}{Lógica e Matemática Computacional}
+\newcommand{\assignment}{Atividade 02}
+\newcommand{\authorfullname}{José Augusto Queiroz Comparotto Gomes}
+\newcommand{\authorname}{José A. Q. C. Gomes}
+\newcommand{\authorno}{398439413098}
+\newcommand{\professor}{Prof.ª Noiza Waltrick Trindade}
+\newcommand{\course}{Ciência da Computação — Noturno}
+\newcommand{\classno}{1309820242A}
+\newcommand{\location}{Campo Grande-MS}
+\newcommand{\documentdate}{22 de setembro de 2024}
+\newcommand{\university}{Universidade Anhaguera — Uniderp}
+
+\author{\authorfullname}
+\title{\subject: \assignment}
+
+% General page styling
+\lhead{\subject\\}
+\rhead{\assignment\\}
+\lfoot{\authorname}
+\cfoot{Página \thepage \ de \pageref{LastPage}}
+\rfoot{RA: \authorno}
+
+\thispagestyle{empty}   %For removing header/footer from page 1
+
+\begin{document}
+
+% Presenting page
+\begingroup  
+
+    \centering
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.15\linewidth]{assets/uniderp.jpg}
+        \label{fig:university-logo}
+    \end{figure}
+    
+    \rule{\textwidth}{2pt}  \\[1em]
+    
+    \LARGE \authorfullname
+
+    \vfill
+    
+    \LARGE \subject     \\
+    \LARGE \assignment
+    
+    \vfill
+    
+    \large À \professor \\
+
+    \vfill
+    
+    \large \course          \\
+    \large Turma \classno   \\[1em]
+    
+    \rule{\textwidth}{2pt}  \\[1em]
+
+    \large \location        \\
+    \large \documentdate    \\
+    
+    \pagebreak
+\endgroup
+
+\pointsdroppedatright   %Self-explanatory
+\printanswers
+\renewcommand{\solutiontitle}{\noindent\textbf{Resposta:}\enspace}  
+
+\begin{questions}
+
+    \question[q1] Considerando que a proposição “Nenhum homem bom pratica o mal” é falsa, qual das seguintes alternativas apresenta uma proposição verdadeira?
+    
+    \begin{parts}
+        \part[a] Todo homem bom pratica o mal.
+        \part[b] Todo homem bom não pratica o mal.
+        \part[c] Alguns homens bons não praticam o mal. 
+        \part[d] Pelo menos um homem bom pratica o mal.
+        \part[e] Não há homem bom que pratique o mal.
+    \end{parts}
+    
+    \begin{solution}
+        (d) Pelo menos um homem bom pratica o mal.
+
+        \textbf{Justificativa:}
+        
+        A negação da inexistência de \(p\) (\( \neg \ \nexists \ p \)) é equivalente à afirmação da existência de \(p\) (\( \exists \ p \)).
+
+        Dado que \(p = \text{“homem bom pratica o mal”} \) e que \( \ \nexists \ p = F\), tem-se que: \( \exists \ p  = V\).
+
+        A alternativa (d) “Pelo menos um homem bom pratica o mal.” é compatível com: \(\exists \ p\), portanto é uma proposição Verdadeira. 
+        
+    \end{solution}
+    
+    \question[q2] Considere a seguinte sentença: “Todo professor é bem-humorado”. A negação dessa sentença é:
+    
+    \begin{parts}
+        \part[a] Não existe professor mal-humorado.
+        \part[b] Existe professor mal-humorado.
+        \part[c] Alguns professores são bem-humorados.
+        \part[d] Existe professor bem-humorado.
+        \part[e] Nenhum professor é mal-humorado.
+    \end{parts}
+    
+    \begin{solution}
+        (b) Existe professor mal-humorado.
+
+        \textbf{Justificativa:}
+        
+        A negação da afirmação universal de \(p\) (\( \neg \forall p \)) é equivalente à afirmação da existência de não-\(p\) (\( \exists \neg p \)).
+
+       Considerando que “bem-humorado” e “mal-humorado” têm sentidos explicitamente opostos, é válido assumir que se \(p = \text{“professor é bem-humorado”} \), então \( \neg p = \text{“professor é mal-humorado”} \).
+
+        A alternativa (b) “Existe professor mal-humorado.” é compatível com: \( \exists \neg p \), portanto é a negação de \(\forall p\) (“Todo professor é bem-humorado”).
+        
+    \end{solution}
+
+    \question[q3] Sejam as proposições, P: Marcos é alto; Q: Marcos é elegante. Traduzir para a linguagem simbólica as seguintes proposições. 
+    
+    \begin{parts}
+        \part[a] Marcos é alto e elegante.
+        \part[b] Marcos é alto, mas não é elegante. 
+        \part[c] Não é verdade que marcos é baixo ou elegante.
+        \part[d] Marcos não é nem alto e nem elegante.
+        \part[e] Marcos é alto ou é baixo e elegante. 
+        \part[f] É falso que Marcos é baixo ou que não é elegante. 
+    \end{parts}
+    
+    \begin{solution}                            \\[0.5em]
+        (a) \( P \wedge Q \)                    \hfill
+        (b) \( P \wedge \neg Q \)               \hfill
+        (c) \( \neg ( \neg P \vee Q ) \)        \\[0.5em]
+        (d) \( \neg P \wedge \neg Q \)          \hfill
+        (e) \( P \vee ( \neg P \wedge Q ) \)    \hfill
+        (f) \( \neg ( \neg P \vee \neg Q ) \)   \\[1em]
+        \textbf{Justificativa:} Considerando que,
+        \begin{itemize}
+            \item[I.] “alto” e “baixo” têm sentidos exclusivamente opostos, é válido que se \( P = \text{“Marcos é alto”} \), então \( \neg P = \text{“Marcos é baixo”} \).
+            \item[II.] A fórmula “\(p\) e \(q\)” equilave a: \( p \wedge q\).
+            \item[III.] A fórmula “\(p\), mas não \(q\)” equilave a: \( p \wedge \neg q\).
+            \item[IV.] A fórmula “Não é verdade que \(p\)” equilave a: \( \neg p \).
+            \item[V.] A fórmula “\(p\) ou \(q\)” equilave a: \( p \vee q\).
+            \item[VI.] A fórmula “nem \(p\), nem \(q\)” equilave a: \( \neg p \wedge \neg q \).
+        \end{itemize}
+        É possível reescrever cada sentença dada em sua respectiva forma simbólica. 
+    \end{solution}
+
+    \question[q4] Construir a Tabela Verdade das seguintes proposições: \\[1em]
+    (a) \( P \wedge \neg Q \Rightarrow P \) \hfill
+    (b) \( \neg P \iff \neg Q \)            \hfill
+    (c) \( \neg (\neg P \vee \neg Q) \)     
+
+    \begin{solution}
+        \begin{tabular}{| c | c || c | c | c |} 
+         \hline
+            \( P \) & \( Q \) &
+            (a) \( P \wedge \neg Q \Rightarrow P \) &
+            (b) \( \neg P \iff \neg Q \)  &
+            (c) \( \neg (\neg P \vee \neg Q) \) \\
+         \hline
+         \hline
+         \( F \) & \( F \) & \( V \) & \( V \) &  \( F \) \\
+         \hline
+         \( F \) & \( V \) & \( V \) & \( F \) &  \( F \) \\
+         \hline
+         \( V \) & \( F \) & \( V \) & \( F \) &  \( F \) \\
+         \hline
+         \( V \) & \( V \) & \( V \) & \( V \) &  \( V \) \\
+         \hline
+        \end{tabular}
+    \end{solution}
+
+    \pagebreak
+    
+    \question[q5] Dadas as proposições simples \(p\) e \(q\), tais que \(p\) é verdadeira e \(q\) é falsa, considere as seguintes proposições compostas: \\[1em] 
+        (1) \( p \wedge q \) \hfill
+        (2) \( \neg p \Rightarrow q \) \hfill
+        (3) \( \neg ( p \vee \neg q ) \) \hfill
+        (4) \( \neg ( p \iff q ) \) \\[1em] 
+    Quantas dessas proposições compostas são verdadeiras? \\[1em]
+        (a) nenhuma. \hfil
+        (b) uma.     \hfil
+        (c) duas.    \hfil
+        (d) três.    \hfil
+        (e) quatro.
+    
+    \begin{solution}
+        (b) duas
+        
+        \textbf{Justificativa:}  Dado que \( p = V\) e que \( q = F \), tem-se que:
+        
+        \begin{itemize}
+            \item[(1)] \( (p \wedge q) = (V \wedge F) = F\) 
+            \item[(2)] \( (\neg p \Rightarrow q ) = ( \neg V \Rightarrow F ) = ( F \Rightarrow F ) = V\)
+            \item[(3)] \( \neg ( p \vee \neg q ) = \neg ( V \vee \neg F ) = \neg ( V \vee V ) = \neg V = F \)
+            \item[(4)] \( \neg ( p \iff q ) = \neg ( V \iff F ) = \neg F = V \)
+        \end{itemize}
+
+        Desta forma, temos que apenas as proposições (2) e (4) são verdadeiras. Portanto, a resposta é a alternativa (b) duas.
+
+        
+    \end{solution}
+    
+    \question[q6] Utilizando as letras proposicionais adequadas na proposição composta “Nem Antônio é  desembargador nem Jonas é juiz”, assinale a opção correspondente à simbolização correta dessa proposição:\\[1em]
+        (a) \( \neg ( A \wedge B ) \)           \hfill
+        (b) \( ( \neg A ) \Rightarrow B \)      \hfill
+        (c) \( \neg ( A ) \vee ( \neg B ) \)    \\[1em]
+        (d) \( \neg ( A \vee ( \neg B ) ) \)    \hfill
+        (e) \( ( \neg A ) \wedge ( \neg B ) \)
+        
+    \begin{solution}
+        (e) \( ( \neg A ) \wedge ( \neg B ) \)
+        
+        \textbf{Justificativa:}
+        Em  “Nem Antônio é desembargador, nem Jonas é juiz”, podemos separar as seguintes partes: \\[1em]
+            A = “Antônio é desembargador” e 
+            B = “Jonas é juiz”.\\[1em]
+        A fórmula “nem \(p\), nem \(q\)” corresponde à conjunção das negações: \( \neg p \wedge \neg q \).   \\[1em]
+        Portanto, a proposição “Nem Antônio é desembargador, nem Jonas é juiz” corresponde a \( ( \neg A ) \wedge ( \neg B ) \).
+    \end{solution}
+    
+    \question[q7] Sabe-se que as proposições:
+        \begin{enumerate}
+            \item[I] — Se Aristides faz gols, então o GFC é campeão;
+            \item[II] — O Aristides faz gols ou o Leandro faz gols;
+            \item[III] — Leandro faz gols;
+        \end{enumerate}
+    são, respectivamente, falsa, verdadeira e falsa. Daí, conclui-se que:
+    
+    \begin{parts}
+        \part Aristides não faz gols ou o GFC não é campeão.
+        \part Aristides faz gols e o GFC não é campeão. 
+        \part Aristides não faz gols e o GFC é campeão.
+        \part Aristides faz gols e o GFC é campeão. 
+        \part Aristides não faz gols e o GFC não é campeão.
+    \end{parts}
+
+    \begin{solution}
+        (b) Aristides faz gols e o GFC não é campeão.
+        
+        \textbf{Justificativa:}
+            Dado que a proposição “I” segue a estrutura condicional “se \(p\), então \(q\)” (\( p \Rightarrow q \)), sendo \( p \) a afirmação “Aristides faz gols” e \( q \) a afirmação “GFC é campeão”, e foi dado que \( I = F \), sabemos que a condição é falsa.
+            
+            Pela tabela verdade de uma proposição condicional, a única situação em que essa proposição é falsa ocorre quando \( p = V \) e \( q = F \), ou seja, quando “Aristides faz gols” (\( p = V \)) e “GFC não é campeão” (\( q = F \)).
+            
+            Portanto, conclui-se que “Aristides faz gols” e “GFC não é campeão”, correspondendo à alternativa (b).
+    \end{solution}
+
+    \pagebreak
+    
+    \question[q8] Existem três suspeitos de invadir uma rede de computadores: Lucas, Mariana e José. Sabe se que a invasão foi efetivamente cometida por um ou por mais de um deles, já que podem ter agido individualmente ou não. Sabe-se ainda que:
+        
+        \begin{enumerate}
+            \item[\(P_1\))] se Lucas é inocente, então Mariana é culpada;
+            \item[\(P_2\))] ou José é culpado, ou Mariana é culpada;
+            \item[\(P_3\))] José não é inocente.
+        \end{enumerate}
+        
+    Com base nestas considerações, conclui-se que: 
+    
+    \begin{parts}
+        \part somente Lucas é inocente.
+        \part somente Mariana é culpada.
+        \part somente José é culpado.
+        \part são culpados Mariana e José.
+        \part são culpados Lucas e José.
+    \end{parts}
+
+    \begin{solution}
+        (e) são culpados Lucas e José
+
+        \textbf{Justificativa:} Sejam, \\[0.5em]
+            L = “Lucas é culpado”;   \hfill
+            M = “Mariana é culpada”; \hfill
+            J = “José é culpado”.    
+
+        Considera-se que para qualquer \(x\), “\(x\) é inocente” é negação para “\(x\) é culpado(a)”. 
+
+        É considerado verdadeiro que: \\[1em]
+        \(P_0\): \( L \vee M \vee J \); \textit{(enunciado)} \hfill
+        \(P_1\): \( \neg L \Rightarrow M \); \hfill
+        \(P_2\): \( J \veebar M \); \hfill
+        \(P_3\): \( \neg \neg J \). \\[1em]
+        A dupla negação em \(P_3\) infere que \(J = V\). Portanto, “José é culpado”.
+
+        Diante disto, infere-se a partir de \(P_2\) que \(M = F\). Ou seja, “Mariana é inocente”.
+
+        Desta forma, a partir contra-positiva de \(P_1\): (\( \neg M \Rightarrow L \)), como \(M = F\), concluí-se que \( L = V \): “Lucas é culpado”.
+    
+        Portanto, a alternativa que reflete estas conclusões é a letra (e): são culpados Lucas e José.
+        
+    \end{solution}
+
+    \pagebreak
+    
+    \question[q9] Do ponto de vista lógico, uma afirmação equivalente à afirmação: “o bolso está furado ou as moedas não caem no chão” é: 
+    
+    \begin{parts}
+        \part o bolso não está furado e as moedas não caem no chão.
+        \part se o bolso não está furado, então as moedas não caem no chão. 
+        \part o bolso está furado e as moedas caem no chão. 
+        \part se o bolso está furado, então as moedas caem no chão.
+        \part se as moedas não caem no chão, então o bolso não está furado. 
+    \end{parts}
+
+    \begin{solution}
+        (b) se o bolso não está furado, então as moedas não caem no chão.
+    \end{solution}
+    
+    \question[q10] A negação de “Se a canoa não virar, eu chego lá” é: 
+    
+    \begin{parts}
+        \part A canoa não vira e eu não chego lá.
+        \part Se a canoa virar, eu não chego lá.
+        \part Se a canoa não virar, eu não chego lá.
+        \part A canoa vira e eu chego lá.
+        \part Se eu não chego lá, a canoa vira.
+    \end{parts}
+
+    \begin{solution}
+        (a) A canoa não vira e eu não chego lá.
+    \end{solution}
+    
+    \question[q11] Dizer que “Alexandre foi aos Lençóis Maranhenses, se e somente se, fez sol” é logicamente equivalente dizer que: 
+    
+    \begin{parts}
+        \part Ou Alexandre foi aos Lençóis Maranhenses, ou fez sol.
+        \part Não fez sol, se e somente se, Alexandre foi aos Lençóis Maranhenses. 
+        \part Se Alexandre foi aos Lençóis Maranhenses, então não fez sol.
+        \part Se Alexandre foi aos Lençóis Maranhenses, então fez sol.
+        \part Fez sol, se e somente se, Alexandre foi aos Lençóis Maranhenses.
+    \end{parts}
+
+    \begin{solution}
+        (e) Fez sol, se e somente se, Alexandre foi aos Lençóis Maranhenses.
+    \end{solution}
+
+    \pagebreak
+
+    \question[q12] Considere a sentença: “Se gosto de capivara, então gosto de javali”. Uma sentença logicamente equivalente à sentença dada é: 
+    
+    \begin{parts}
+        \part Se não gosto de capivara, então não gosto de javali.
+        \part Gosto de capivara e gosto de javali.
+        \part Não gosto de capivara ou não gosto de javali.
+        \part Gosto de javali ou não gosto de capivara.
+        \part Se gosto de javali, então não gosto de capivara.
+    \end{parts}
+
+    \begin{solution}
+        (d) Gosto de javali ou não gosto de capivara.
+    \end{solution}
+    
+\end{questions}
+
+\end{document}
