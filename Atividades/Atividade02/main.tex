@@ -1,3 +1,5 @@
+% https://github.com/JoseComparotto/logica/tree/main/Atividades/Atividade02
+
 \documentclass[12pt,letterpaper, onecolumn]{exam}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -15,7 +17,7 @@
 \newcommand{\course}{Ciência da Computação — Noturno}
 \newcommand{\classno}{1309820242A}
 \newcommand{\location}{Campo Grande-MS}
-\newcommand{\documentdate}{22 de setembro de 2024}
+\newcommand{\documentdate}{Setembro de 2024}
 \newcommand{\university}{Universidade Anhaguera — Uniderp}
 
 \author{\authorfullname}
@@ -310,6 +312,18 @@
 
     \begin{solution}
         (b) se o bolso não está furado, então as moedas não caem no chão.
+
+        \textbf{Justificativa:} Sejam, \\[0.5em]
+            B = “O bolso está furado”;  \hfill
+            M = “as moedas caem no chão”.
+
+        A afirmação em questão pode ser representada por: \( B \vee \neg M \)
+
+        A partir da Lei de Morgan, sabe-se que uma disjunção \( p \vee q \) é logicamente equivalente à condicional \( \neg p \Rightarrow q \).
+        Logo, podemos reescrever \( B \vee \neg M \), mantendo a equivalência lógica, como: \( \neg B \Rightarrow \neg M \);
+        
+        A sentença da alternativa (b) é compatível com a expressão encontrada.
+
     \end{solution}
     
     \question[q10] A negação de “Se a canoa não virar, eu chego lá” é: 
@@ -324,7 +338,19 @@
 
     \begin{solution}
         (a) A canoa não vira e eu não chego lá.
-    \end{solution}
+
+        \textbf{Justificativa:} Considerando:
+
+            C = “a canoa virar”; \hfill
+            L = “eu chego lá”. 
+
+            A proposição dada pode ser representada por: \( \neg C \Rightarrow L \).
+
+            A negação de uma condição \( p \Rightarrow q \) é a afirmação da conjunção \( p \wedge \neg q \).
+
+            Portanto, \( \neg ( \neg C \Rightarrow L ) \) equivale a \( \neg C \wedge \neg L \). Ou seja:  “A canoa não vira e eu não chego lá.”.
+        
+        \end{solution}
     
     \question[q11] Dizer que “Alexandre foi aos Lençóis Maranhenses, se e somente se, fez sol” é logicamente equivalente dizer que: 
     
@@ -338,9 +364,18 @@
 
     \begin{solution}
         (e) Fez sol, se e somente se, Alexandre foi aos Lençóis Maranhenses.
-    \end{solution}
 
-    \pagebreak
+        \textbf{Justificativa:} Considerando:
+
+        A = “Alexandre foi aos Lençóis Maranhenses”; \hfill 
+        S = “fez sol”.
+
+        A proposição em questão pode ser representada por: \( A \iff S\)
+        
+        O conectivo lógico bi-condicional é comutativo. Ou seja, a expressão \( p \iff q \) é equivalente à expressão \( q \iff p \).
+        
+        Portanto, a proposição dada é logicamente equivalente a \( S \iff A \): “Fez sol, se e somente se, Alexandre foi aos Lençóis Maranhenses.”
+        \end{solution}
 
     \question[q12] Considere a sentença: “Se gosto de capivara, então gosto de javali”. Uma sentença logicamente equivalente à sentença dada é: 
     
@@ -354,7 +389,20 @@
 
     \begin{solution}
         (d) Gosto de javali ou não gosto de capivara.
-    \end{solution}
+
+        \textbf{Justificativa:} Sendo:
+        
+        C = “gosto de capivara”; \hfill
+        J = “gosto de javali”.
+
+        A sentença dada pode ser representada por: \( C \Rightarrow J\).
+        
+        Uma condição \( p \Rightarrow q \) é logicamente equivalente à disjunção \( \neg p \vee q \).
+
+        Portanto, a sentença dada é equivalente a \( \neg C \vee J \), ou \( J \vee \neg C\), visto que disjunção é um conectivo comutativo.
+
+        Logo, a equivalência é compatível com a sentença: “Gosto de javali ou não gosto de capivara”.
+        \end{solution}
     
 \end{questions}
 
