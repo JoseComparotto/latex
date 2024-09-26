@@ -6,6 +6,8 @@
 \usepackage[lmargin=71pt, tmargin=1.2in]{geometry}  %For centering solution box
 \usepackage{graphicx} % Required for inserting images
 \usepackage{lastpage}
+\usepackage{qrcode}
+\usepackage{hyperref}
 
 % Document's meta-data
 \newcommand{\subject}{Lógica e Matemática Computacional}
@@ -40,7 +42,7 @@
     \centering
     \begin{figure}
         \centering
-        \includegraphics[width=0.15\linewidth]{assets/uniderp.jpg}
+        \includegraphics[width=0.15\linewidth]{uniderp.jpg}
         \label{fig:university-logo}
     \end{figure}
     
@@ -66,7 +68,7 @@
 
     \large \location        \\
     \large \documentdate    \\
-    
+
     \pagebreak
 \endgroup
 
@@ -405,5 +407,28 @@
         \end{solution}
     
 \end{questions}
+
+\begingroup
+    \pagebreak
+    \centering
+
+    \rule{\textwidth}{1pt}
+    
+    \vfill
+
+    \LARGE{Trabalho desenvolvido em LaTeX} \\[1em]
+    \large{Código-fonte disponível em:} \\[2em]
+    
+    \qrcode[height=1.5in]{https://github.com/JoseComparotto/logica/blob/main/Atividades/Atividade02/main.tex} \\[2em]
+
+    \large \url{https://github.com/JoseComparotto/logica} 
+    
+    \vfill
+
+    \rule{\textwidth}{1pt}
+    
+    \pagebreak
+
+\endgroup
 
 \end{document}
